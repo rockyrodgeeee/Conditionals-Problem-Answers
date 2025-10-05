@@ -1,0 +1,80 @@
+#include <iostream>
+using namespace std;
+
+// Problem 6: Menu and Switch Program
+// Combines Problems 1–5 using a switch statement
+
+int main() {
+    int choice;
+    cout << "Choose a problem (1-5): ";
+    cin >> choice;
+
+    switch (choice) {
+        case 1: {
+            // Problem 1: Lemonade money check
+            double moneyAmount;
+            cout << "Enter your money: ";
+            cin >> moneyAmount;
+            if (moneyAmount >= 1)
+                cout << "Enjoy your lemonade!" << endl;
+            else
+                cout << "Sorry, you need more money." << endl;
+            break;
+        }
+        case 2: {
+            // Problem 2: Temperature-based price
+            int temperatureCelsius;
+            cout << "Enter today's temperature in Celsius: ";
+            cin >> temperatureCelsius;
+            double price = (temperatureCelsius >= 30) ? 0.80 : 1.00;
+            cout << "Lemonade costs $" << price << " today." << endl;
+            break;
+        }
+        case 3: {
+            // Problem 3: Inventory check
+            int lemonCount, sugarAmount;
+            cout << "Lemons: ";
+            cin >> lemonCount;
+            cout << "Sugar: ";
+            cin >> sugarAmount;
+            if (lemonCount <= 0 || sugarAmount <= 0)
+                cout << "You can't make lemonade!" << endl;
+            else
+                cout << "You're ready to sell lemonade!" << endl;
+            break;
+        }
+        case 4: {
+            // Problem 4: Bulk discount
+            int numberOfCups;
+            cout << "How many cups? ";
+            cin >> numberOfCups;
+            double discount = (numberOfCups >= 10) ? 0.8 : (numberOfCups >= 5 ? 0.9 : 1.0);
+            cout << "Total cost: $" << numberOfCups * discount << endl;
+            break;
+        }
+        case 5: {
+            // Problem 5: Player movement
+            char playerMove;
+            int coordinateX = 0, coordinateY = 0;
+            cout << "Enter move (W/A/S/D): ";
+            cin >> playerMove;
+
+            if (playerMove == 'W' || playerMove == 'w')
+                coordinateY++;
+            else if (playerMove == 'S' || playerMove == 's')
+                coordinateY--;
+            else if (playerMove == 'A' || playerMove == 'a')
+                coordinateX--;
+            else if (playerMove == 'D' || playerMove == 'd')
+                coordinateX++;
+            else
+                cout << "Invalid move!" << endl;
+
+            cout << "The location of the player is (" << coordinateX << ", " << coordinateY << ")" << endl;
+            break;
+        }
+        default:
+            cout << "Invalid choice. Please pick 1-5." << endl;
+    }
+    return 0;
+}

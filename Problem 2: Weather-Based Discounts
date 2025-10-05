@@ -2,21 +2,15 @@
 using namespace std;
 
 int main() {
-    int cupCount = 0;
-    cout << "How many cups? ";
-    cin >> cupCount;
+    int temperatureCelsius = 0;
+    cout << "Enter today's temperature in Celsius: ";
+    cin >> temperatureCelsius;
 
-    double totalCost = cupCount * 1.0;  
-
-    if (cupCount >= 10) {
-        totalCost *= 0.8; 
-    } else if (cupCount >= 5) {
-        totalCost *= 0.9; 
+    if (temperatureCelsius >= 30) {
+        cout << "It's hot! Lemonade costs $0.80 today." << endl;
     } else {
-        totalCost *= 1;   
+        cout << "Lemonade costs $1.00 today." << endl;
     }
-
-    cout << "Total cost: $" << totalCost << endl;
 
     return 0;
 }

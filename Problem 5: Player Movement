@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int coordinateX = 0, coordinateY = 0;
+    string playerMove;
+    cout << "Enter move (W/A/S/D): ";
+    cin >> playerMove;
+
+    if (playerMove == "W" || playerMove == "w") {
+        coordinateY += 1;
+    } else if (playerMove == "S" || playerMove == "s") {
+        coordinateY -= 1;
+    } else if (playerMove == "A" || playerMove == "a") {
+        coordinateX -= 1;
+    } else if (playerMove == "D" || playerMove == "d") {
+        coordinateX += 1;
+    } else {
+        cout << "Invalid move!" << endl;
+    }
+
+    cout << "The location of the player is ( " << coordinateX << ", " << coordinateY << " )" << endl;
+
+    return 0;
+}
